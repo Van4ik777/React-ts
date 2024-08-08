@@ -1,7 +1,19 @@
-import { ToDotasks } from '../ToDotasks/ToDotasks'
+import { ToDoTasks } from '../ToDotasks/ToDotasks'
 import './todomain.css'
 
-export const ToDoMain = () =>{
+interface Task {
+    title: string
+    text: string
+}
+
+export const ToDoMain = () => {
+
+    const tasks: Task[] = [
+        {title: 'First Task', text: 'This is the first task' },
+        {title: 'Second Task', text: 'This is the second task' },
+        {title: 'Third Task', text: 'This is the third task' }
+    ]
+
     return (
         <div className='mainToDo'>
             <h1>To Do List</h1>
@@ -10,7 +22,9 @@ export const ToDoMain = () =>{
                 <button className='mainbutton' type="submit" >Add</button>
             </form>
             <div className="tasksMain">
-                <ToDotasks />
+                {tasks.map(task=>(
+                    <ToDoTasks title={task.title} text={task.text} />
+                ))}
             </div>
         </div>
     )
