@@ -1,4 +1,4 @@
-import { ToDoItem } from '../ToDoItem/ToDoItem'
+import { ToDoList } from '../ToDoList/ToDoList'
 import './todoapp.css'
 
 interface Task {
@@ -25,9 +25,7 @@ export const ToDoApp = () => {
                 <button className='mainbutton' type="submit" >Add</button>
             </form>
             <div className="tasksMain">
-                {tasks.map(task=>(
-                    <ToDoItem id={task.id} title={task.title} text={task.text} isCompleted={task.isCompleted} userId={task.userId} />
-                ))}
+                <ToDoList tasks={tasks} />
             </div>
         </div>
     )
