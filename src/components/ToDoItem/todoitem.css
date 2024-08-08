@@ -1,5 +1,6 @@
 /* Основной контейнер для задачи */
 .task-container {
+    position: relative;
     background-color: #2A2E35;
     padding: 20px;
     margin: 10px 0;
@@ -18,21 +19,18 @@
     margin-bottom: 10px; /* Отступ снизу для разделения заголовка и текста */
 }
 
-/* Стили для текста */
 .task-container p {
     font-size: 16px;
     color: #81D4FA;
-    margin: 0 0 15px 0; /* Отступ снизу для разделения текста и кнопок */
-    word-wrap: break-word; /* Перенос слов на следующую строку, если не помещаются */
+    margin: 0 0 15px 0;
+    word-wrap: break-word; 
 }
 
-/* Контейнер для кнопок */
 .task-buttons {
     display: flex;
-    gap: 10px; /* Разделение между кнопками */
+    gap: 10px; 
 }
 
-/* Стили для кнопок */
 .task-container button {
     background-color: #81fa89;
     color: #1C1F24;
@@ -59,3 +57,21 @@
     background-color: #E53935;
     transform: translateY(-2px);
 }
+
+.label-container {
+    position: absolute;
+    top: 0;
+    right: 0;
+    font-size: 1rem;
+    font-weight: bold;
+    color: #c33c37;
+    margin: 0.5rem;
+}
+.completed {
+    color: #4dd727;
+}
+
+.not-completed {
+color: #e43731; 
+}
+
