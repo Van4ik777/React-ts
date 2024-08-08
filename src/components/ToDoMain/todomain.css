@@ -1,0 +1,66 @@
+h1 {
+    color: #ECEFF1;
+    font-size: 48px;
+    margin: 0;
+    padding: 20px 0;
+    font-weight: 700;
+}
+
+.mainToDo {
+    position: relative;
+    text-align: center;
+    padding: 40px;
+    margin-top: 50px;
+    border-radius: 15px;
+    width: 90%;
+    max-width: 600px;
+    border: none;
+    background-color: #1C1F24;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+/* Контейнер для формы, чтобы выровнять элементы по горизонтали */
+.form-container {
+    display: flex;
+    gap: 10px; /* Расстояние между полем ввода и кнопкой */
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.maininput {
+    padding: 15px;
+    border: none;
+    border-radius: 5px;
+    font-size: 18px;
+    flex-grow: 1; /* Расширяет поле ввода, чтобы занимать всю доступную ширину */
+    background-color: #2A2E35;
+    color: #FFF;
+    box-sizing: border-box;
+}
+
+.maininput::placeholder {
+    color: #A0A4A8;
+}
+
+.mainbutton {
+    padding: 12px 25px;
+    margin-left: 10px;
+    background-color: #546E7A;
+    color: #FFF;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 18px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    white-space: nowrap; /* Предотвращает перенос текста кнопки */
+}
+
+.mainbutton:hover {
+    background-color: #455A64;
+    transform: translateY(-2px);
+}
+
+.tasksMain {
+    margin-top: 30px;
+}
