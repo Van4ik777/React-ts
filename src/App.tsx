@@ -1,10 +1,10 @@
-import { ToDoMain } from "./components/ToDoMain/ToDoMain"
+import { ToDoApp } from "./components/ToDoApp/ToDoApp"
 import './App.css'
 function App() {
 
   return (
     <>
-    <ToDoMain/>
+    <ToDoApp/>
     </>
   )
 }
