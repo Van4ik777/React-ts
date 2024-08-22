@@ -1,8 +1,9 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import '../ToDoItem/todoitem.css';
 import { ToDoItem } from '../ToDoItem/ToDoItem';
 import { Todo } from '../../types/todo.interface';
-
+import { CSSTransition, TransitionGroup } from 'react-transition-group';
+import './todolist.css'
 
 
 interface Props {
@@ -11,7 +12,14 @@ interface Props {
 
 export const ToDoList: React.FC<Props> = ({ tasks }) => {
     const [todos, setTodos] = useState<Todo[]>(tasks)
+    
+    useEffect(() => {
+        setTodos(tasks);
+    }, [tasks]);
 
+    console.log(tasks)
+    console.log(todos)
+    
     const onDeleteTodo = (id:number)=>{
         const filteredTodos = todos.filter(todo =>todo.id !== id)
         setTodos(filteredTodos)
@@ -26,11 +34,14 @@ export const ToDoList: React.FC<Props> = ({ tasks }) => {
         setTodos(filteredTodo)
 
     }
+
     return (
-        <div className='tasksMain'>
+        <TransitionGroup className='tasksMain'>
             {todos.map(task => (
-                <ToDoItem key={task.id} task={task} onDeleteItem={onDeleteTodo } onSwichStatus={onSwichStatus} />
+                <CSSTransition key={task.id} timeout={500} classNames="fade">
+                    <ToDoItem  task={task} onDeleteItem={onDeleteTodo } onSwichStatus={onSwichStatus} />
+                </CSSTransition>
             ))}
-        </div>
+        </TransitionGroup>
     );
 }
