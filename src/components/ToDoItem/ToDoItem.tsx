@@ -11,13 +11,17 @@ interface Props{
 
 export const ToDoItem: React.FC<Props> = ({onSwichStatus, onDeleteItem, task}) => {
 
-
+    const formattedDate = task.date ? new Date(task.date).toLocaleDateString('ru-RU', {
+        year: 'numeric',
+        month: 'long',
+        day: 'numeric'
+    }) : '';
     return (
         <div className='task-container'>
             <h2>{task.title}</h2>
 
             <p>{task.text}</p>
-
+            <p className='task-date'>{formattedDate}</p>
             <label 
                 className={`label-container ${task.isCompleted ? 'completed' : 'not-completed'}`}>
                 {task.isCompleted ? 'Completed' : 'Not Completed'}
