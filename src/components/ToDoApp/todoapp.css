@@ -19,10 +19,9 @@ h1 {
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
 }
 
-/* Контейнер для формы, чтобы выровнять элементы по горизонтали */
 .form-container {
     display: flex;
-    gap: 10px; /* Расстояние между полем ввода и кнопкой */
+    gap: 10px; 
     justify-content: space-between;
     align-items: center;
     margin-bottom: 20px;
@@ -33,7 +32,7 @@ h1 {
     border: none;
     border-radius: 5px;
     font-size: 18px;
-    flex-grow: 1; /* Расширяет поле ввода, чтобы занимать всю доступную ширину */
+    flex-grow: 1; 
     background-color: #2A2E35;
     color: #FFF;
     box-sizing: border-box;
@@ -53,7 +52,7 @@ h1 {
     cursor: pointer;
     font-size: 18px;
     transition: background-color 0.3s ease, transform 0.2s ease;
-    white-space: nowrap; /* Предотвращает перенос текста кнопки */
+    white-space: nowrap; 
 }
 
 .mainbutton:hover {

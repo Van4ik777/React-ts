@@ -1,16 +1,17 @@
+import React from 'react';
 import { Todo } from '../../types/todo.interface';
 import './todoitem.css';
 
 
 
 interface Props{
-    onSwichStatus: (id: number) => void
+    onSwitchStatus: (id: number) => void
     onDeleteItem: (id: number) => void
     task: Todo
 }
 
-export const ToDoItem: React.FC<Props> = ({onSwichStatus, onDeleteItem, task}) => {
-
+export const ToDoItem: React.FC<Props> = (props:Props) => {
+    const { onSwitchStatus, onDeleteItem, task } = props;
 
     return (
         <div className='task-container'>
@@ -24,7 +25,7 @@ export const ToDoItem: React.FC<Props> = ({onSwichStatus, onDeleteItem, task}) =
             </label>
             
             <div className="task-buttons">
-                <button onClick={() => onSwichStatus(task.id)}>готово</button>
+                <button onClick={() => onSwitchStatus(task.id)}>готово</button>
                 <button className="secondary" onClick={() => onDeleteItem(task.id)}>Удалить</button>
             </div>
             

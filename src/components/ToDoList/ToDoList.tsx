@@ -1,35 +1,19 @@
-import React, { useState } from 'react';
 import '../ToDoItem/todoitem.css';
 import { ToDoItem } from '../ToDoItem/ToDoItem';
 import { Todo } from '../../types/todo.interface';
 
-
-
 interface Props {
     tasks: Todo[];
+    onDeleteTodo: (id: number) => void;
+    onSwitchStatus: (id: number) => void;
 }
 
-export const ToDoList: React.FC<Props> = ({ tasks }) => {
-    const [todos, setTodos] = useState<Todo[]>(tasks)
-
-    const onDeleteTodo = (id:number)=>{
-        const filteredTodos = todos.filter(todo =>todo.id !== id)
-        setTodos(filteredTodos)
-    }
-    const onSwichStatus = (id:number)=>{
-        const filteredTodo = todos.map(todo => {
-            if (todo.id === id){
-                todo.isCompleted = !todo.isCompleted
-            }
-            return todo
-        })
-        setTodos(filteredTodo)
-
-    }
+export const ToDoList: React.FC<Props> = (props: Props) => {
+    const { tasks, onDeleteTodo, onSwitchStatus } = props;
     return (
         <div className='tasksMain'>
-            {todos.map(task => (
-                <ToDoItem key={task.id} task={task} onDeleteItem={onDeleteTodo } onSwichStatus={onSwichStatus} />
+            {tasks.map(task => (
+                <ToDoItem key={task.id} task={task} onDeleteItem={onDeleteTodo} onSwitchStatus={onSwitchStatus} />
             ))}
         </div>
     );
